@@ -1,4 +1,4 @@
-# READ-ME: Travel Buddy iOS App - Tushar Sharma(8869110)
+# READ-ME: Travel Buddy iOS App - Tushar Sharma
 
 ## Application Overview
 
