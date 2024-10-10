@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TripExpenses" representedClassName="TripExpenses" syncable="YES">
+        <attribute name="expenseAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="expenseName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="one" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TripInfo" inverseName="expenses" inverseEntity="TripInfo"/>
+    </entity>
+    <entity name="TripInfo" representedClassName="TripInfo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="tripDescription" optional="YES" attributeType="String"/>
+        <attribute name="tripDestination" optional="YES" attributeType="String"/>
+        <attribute name="tripDestinationLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tripDestinationLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tripEndDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tripName" optional="YES" attributeType="String"/>
+        <attribute name="tripSource" optional="YES" attributeType="String"/>
+        <attribute name="tripSourceLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tripSourceLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tripStartDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TripExpenses" inverseName="one" inverseEntity="TripExpenses"/>
+    </entity>
 </model>
